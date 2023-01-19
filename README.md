@@ -4,7 +4,19 @@ Fdf é um wireframe model 3D, consiste em projetar em uma nova janela um mapa 3d
 
 Neste projeto foi utilizado uma versão do algoritmo [bresenham](https://pt.wikipedia.org/wiki/Algoritmo_de_Bresenham) para desenhar retas diagonais.
 
-**Desafios:** Aprender a utilizar a Minilibx e a Xlib, entender os conceitos do servidor gráfico e o conceito de desenhar pixels em tela.
+**Desafios do projeto:** Aprender a utilizar a Minilibx e a Xlib, entender os conceitos do servidor gráfico e o conceito de desenhar pixels em tela.
+
+### Como executar:
+
+- ![Minilibx](https://github.com/42Paris/minilibx-linux) instalado, basta seguir as instruções do link.
+- Ambiente Linux ou WSL2.  
+**NOTA:** Se for windows 10 é necessário instalar um X-Server para windows.
+```
+$ make
+```
+```
+$ ./fdf ./maps/[mapa escolhido].fdf
+```
 
 ##
 ![t1.fdf map](/imgs/t1.png)
