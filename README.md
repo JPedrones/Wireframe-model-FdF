@@ -10,7 +10,7 @@ Neste projeto foi utilizado uma versão do algoritmo [bresenham](https://pt.wiki
 
 - Ambiente Linux ou WSL2.  
 **NOTA:** Se for windows 10 é necessário instalar um X-Server para windows.
-- As seguintes bibliotecas intaladas (math, X11, Xext).
+- As seguintes bibliotecas instaladas: math, X11e Xext.
 ```
 $ make
 ```
