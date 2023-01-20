@@ -1,5 +1,9 @@
 NAME		= fdf
 
+MLX_PATH	= ./libs/minilibx
+MLX_LINUX	= $(MLX_PATH)/libmlx_Linux.a
+MLX			= $(MLX_PATH)/libmlx.a
+
 LIBFT_PATH	= ./libs/libft
 LIBFT_INC	= $(LIBFT_PATH)/includes
 LIBFT		= $(LIBFT_PATH)/libft.a
@@ -7,9 +11,9 @@ LIBFT		= $(LIBFT_PATH)/libft.a
 CFLAGS		= -g3 -Wall -Werror -Wextra
 LFLAGS		= -lft -lmlx -lX11 -lXext -lm
 
-LIBS		= -L$(LIBFT_PATH)
+LIBS		= -L$(LIBFT_PATH) -L$(MLX_PATH)
 
-INCLUDES	= -I./includes -I$(LIBFT_INC)
+INCLUDES	= -I./includes -I$(LIBFT_INC) -I$(MLX_PATH)
 
 SRC_DIR		= ./src/
 SRC_LIST	= fdf.c fdf_utils.c map.c draw.c draw_utils.c draw_rotate.c draw_menu.c color.c controls.c
@@ -29,13 +33,16 @@ RESET		= \033[0m
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS_DIR) $(OBJS)
+$(NAME): $(LIBFT) $(MLX) $(OBJS_DIR) $(OBJS)
 	@gcc $(CFLAGS) $(OBJS) $(LFLAGS) $(LIBS) -o $(NAME)
 	@echo " $(CYAN)$(NAME): $(GRENN)Done!"
 	@echo -n "$(RESET)"
 
 $(LIBFT):
 	@make -sC $(LIBFT_PATH)
+
+$(MLX):
+	@make -sC $(MLX_PATH)
 
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
@@ -45,6 +52,7 @@ $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	@make -sC $(LIBFT_PATH) clean
+	@make -sC $(MLX_PATH) clean
 	@rm -rf $(OBJS_DIR)
 
 fclean: clean

@@ -8,9 +8,9 @@ Neste projeto foi utilizado uma versão do algoritmo [bresenham](https://pt.wiki
 
 ### Como executar:
 
-- ![Minilibx](https://github.com/42Paris/minilibx-linux) instalado, basta seguir as instruções do link.
 - Ambiente Linux ou WSL2.  
 **NOTA:** Se for windows 10 é necessário instalar um X-Server para windows.
+- As seguintes bibliotecas intaladas (math, X11, Xext).
 ```
 $ make
 ```
