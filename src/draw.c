@@ -6,7 +6,7 @@
 /*   By: joapedr2 < joapedr2@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 13:40:51 by jpedrones         #+#    #+#             */
-/*   Updated: 2022/12/21 16:14:41 by joapedr2         ###   ########.fr       */
+/*   Updated: 2023/05/02 03:13:28 by joapedr2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ void	draw_map(t_image *img, t_map *map)
 
 void	draw(t_data *fdf, t_map *map)
 {
-	draw_background(&(fdf->img));
-	draw_map(&(fdf->img), map);
-	draw_menu_background(&(fdf->img));
+	draw_background(&(fdf)->img);
+	draw_map(&(fdf)->img, map);
+	draw_menu_background(&(fdf)->img);
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img.img, 0, 0);
 	draw_menu(fdf);
 }

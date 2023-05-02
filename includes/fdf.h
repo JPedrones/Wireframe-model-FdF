@@ -6,7 +6,7 @@
 /*   By: joapedr2 < joapedr2@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:29:22 by jpedrones         #+#    #+#             */
-/*   Updated: 2022/12/20 14:57:29 by joapedr2         ###   ########.fr       */
+/*   Updated: 2023/05/02 03:18:36 by joapedr2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,35 +28,7 @@
 # define Y_WIN  720
 # define X_MENU 160
 
-typedef struct s_coord
-{
-	int				z;
-	int				pos;
-	int				color;
-	struct s_coord	*next;
-}	t_coord;
-
-typedef struct s_projection
-{
-	int		zoom;
-	double	alpha;
-	double	beta;
-	double	gamma;
-	int		iso;
-	float	z_divisor;
-	int		x_offset;
-	int		y_offset;
-}	t_projection;
-
-typedef struct s_map
-{
-	int				length;
-	int				height;
-	int				z_min;
-	int				z_max;
-	t_coord			*coord;
-	t_projection	cam;
-}	t_map;
+typedef struct s_map	t_map;
 
 typedef struct s_image
 {
@@ -72,7 +44,7 @@ typedef struct s_data
 	void	*mlx;
 	void	*win;
 	t_image	img;
-	t_map	map;
+	t_map	*map;
 }	t_data;
 
 // fdf_utils.c
